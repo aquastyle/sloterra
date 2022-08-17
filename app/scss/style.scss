@@ -1,9 +1,39 @@
-@import "vars";
-@import "libs";
-@import "fonts";
+@import "_vars.scss";
+@import "_libs.scss";
+@import "_fonts.scss";
+
+
+
+.body-img {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: -4px;
+}
+
+.logo img {
+  padding-top: 100px;
+  padding-left: 92px;
+  width: 320px;
+}
+
+.monkey img {
+  width: 100%;
+  height: auto;
+}
+
+.girl img {
+  width: 100%;
+  height: auto;
+}
 
 
 
 
 
-@import "media";
+
+
+
+
+
+@import "media.scss";
