@@ -11,7 +11,7 @@ window.onload = function () {
 			spin();
 		}
 	});
-
+	// хцйкхкйцхцкйхцйхкйцхкйцхцкйхцкйхцкйхй
 	function spin() {
 		$button.removeClass('spin').addClass('disabled');
 		$spinner
