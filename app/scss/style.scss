@@ -115,10 +115,15 @@
 .wheel_spinner--center {
   width: 543.54px;
   height: 542.45px;
+  transform: rotate(-45deg);
 
   img {
     width: 100%;
   }
+}
+
+.wheel_spinner {
+  transition: all .5s !important;
 }
 
 //big wheel
@@ -146,8 +151,7 @@
 
 @keyframes spinTo1 {
   0% {
-    transform: rotate(-53deg);
-    transition: all 1s;
+    transform: rotate(-55deg);
   }
 
   70% {
@@ -162,7 +166,6 @@
     transform: rotate(720deg);
   }
 }
-
 
 // small wheel
 .wheel_spinner.wheel_spinner_animated--small {
@@ -189,7 +192,7 @@
 
 @keyframes spinTo2 {
   0% {
-    transform: rotate(53deg);
+    transform: rotate(45deg);
   }
 
   70% {

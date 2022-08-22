@@ -4,6 +4,7 @@ window.onload = function () {
 		$spinnerTwo = $('.wheel_spinner--center'),
 		$popupOverlay = $('.popup_overlay'),
 		$popupWindow = $('.popup_window');
+		transformProp = -45;
 
 	$button.click(function () {
 		if ($button.hasClass('spin')) {
@@ -14,10 +15,14 @@ window.onload = function () {
 	function spin() {
 		$button.removeClass('spin').addClass('disabled');
 		$spinner
-			.addClass('wheel_spinner_animated_1', 1000)
-			.removeClass('wheel_spinner_animated');
+			.addClass('wheel_spinner_animated_1')
+			.removeClass('wheel_spinner_animated')
+			.animate({
+				transform: `rotate(-45deg)`,
+			}, 500);
+		
 		$spinnerTwo
-			.addClass('wheel_spinner_animated_2', 1000)
+			.addClass('wheel_spinner_animated_2')
 			.removeClass('wheel_spinner_animated--small');
 		setTimeout(function () {
 			// localStorage.currentSpin = 'HTMLC_1237_spin';
