@@ -48,6 +48,86 @@
       width: 215px;
     }
   }
+
+  .deposit {
+    font-size: 20px;
+
+    span {
+      font-size: 30px;
+    }
+  }
+}
+
+@media (max-width:530px) {
+  .deposit {
+    span {
+      font-size: 25px;
+    }
+  }
+}
+
+@media (max-width:495px) {
+  .signup-form {
+    padding: 40px 60px 86px;
+  }
+
+  .deposit {
+    span {
+      font-size: 20px;
+    }
+  }
+}
+
+@media (max-width:460px) {
+  .deposit {
+    font-size: 19px;
+
+    span {
+      font-size: 19px;
+    }
+  }
+
+  .box {
+    img {
+      width: 85px;
+      height: 75px;
+    }
+  }
+}
+
+@media (max-width:410px) {
+  .signup-form {
+    padding: 40px 40px 86px;
+  }
+
+  .box {
+    img {
+      width: 80px;
+      height: 70px;
+    }
+  }
+
+  .button {
+    padding: 18px 45px;
+  }
+
+}
+
+@media (max-width:385px) {
+  .deposit {
+    font-size: 18px;
+
+    span {
+      font-size: 18px;
+    }
+  }
+
+  .box {
+    img {
+      width: 75px;
+      height: 65px;
+    }
+  }
 }
 
 @media (max-width:375px) {
@@ -57,6 +137,14 @@
 
     img {
       width: 200px;
+    }
+  }
+
+  .deposit {
+    font-size: 15px;
+
+    span {
+      font-size: 17px;
     }
   }
 }
