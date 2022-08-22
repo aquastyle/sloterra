@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap');
+@import "_libs.scss";
+
 html {
   box-sizing: border-box;
 }
@@ -7,29 +10,16 @@ html {
 *::after {
   box-sizing: inherit;
 }
+
 html,
-body{
+body {
   height: 100%;
 }
 
-
-
 body {
-  background-image: url(../img/bg.png);
+  background-image: url("../img/bg.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   overflow: hidden;
-}
-
-.wrapper {
-	display: flex;
-	flex-direction: column;
-	min-height: 100%;
-}
-.content {
-	flex: 1 0 auto;
-}
-.footer {
-	flex: 0 0 auto;
 }

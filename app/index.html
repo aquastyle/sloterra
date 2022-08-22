@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Sloterra</title>
-  <link rel="stylesheet" href="css/global.min.css">
   <link rel="stylesheet" href="css/style.min.css">
 </head>
-<div class="wrapper">
+<main class="wrapper">
   <div class="content">
     <section class="sloterra">
       <div class="sloterra__inner">
@@ -20,22 +20,40 @@
           </div>
         </div>
       </div>
+    </section>
+    <section class="wheel_wrap">
+      <div class="wheel_btn spin">
+        <button class="wheel_btn__button">spin</button>
+      </div>
+      <div class="wheel_wrap__wheels">
+        <div class="wheel_spinner__wrapper">
+          <div class="wheel_spinner wheel_spinner--main wheel_spinner_animated">
+            <img src="img/wheel-main.svg" alt="" class="wheel_spinner_img">
+          </div>
+        </div>
+        <div class="wheel_spinner__wrapper">
+          <div class="wheel_spinner wheel_spinner--center wheel_spinner_animated--small">
+            <img src="img/wheel-center.svg" alt="" class="wheel_spinner_img">
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="images">
+      <div class="body-img">
+        <div class="monkey">
+          <img src="img/monkey.png" alt="">
+        </div>
+        <div class="girl">
+          <img src="img/girl.png" alt="">
+        </div>
+      </div>
+    </section>
   </div>
-  <footer>
-    <div class="body-img">
-      <div class="monkey">
-        <img src="img/monkey.png" alt="">
-      </div>
-      <div class="girl">
-        <img src="img/girl.png" alt="">
-      </div>
-    </div>
-  </footer>
-  </section>
-</div>
+</main>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="js/libs.min.js"></script>
 <script src="js/main.js"></script>
 </body>
+
 </html>

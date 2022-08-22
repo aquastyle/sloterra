@@ -28,7 +28,7 @@ gulp.task('css', function(){
     'node_modules/normalize.css/normalize.css',
     'node_modules/slick-carousel/slick/slick.css',
   ])
-    .pipe(concat('_libs.scss'))
+    .pipe(concat('libs.min.css'))
     .pipe(gulp.dest('app/scss'))
     .pipe(browserSync.reload({stream: true}))
 });
