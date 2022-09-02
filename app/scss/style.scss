@@ -4,13 +4,13 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  margin-bottom: -4px;
+  overflow: hidden;
 }
 
 .sloterra {
   position: absolute;
-  top: 100px;
-  left: 92px;
+  top: 50px;
+  left: 50px;
 }
 
 .logo img {
@@ -19,20 +19,19 @@
 
 .images {
   position: absolute;
-  bottom: 0;
+  bottom: -4px;
   left: 0;
   right: 0;
-  z-index: -1;
 }
 
 .monkey img {
-  width: 100%;
-  height: auto;
+  max-width: 100%;
+  max-height: 60vh;
 }
 
 .girl img {
-  width: 100%;
-  height: auto;
+  max-width: 100%;
+  max-height: 80vh;
 }
 
 .wheel_wrap {
@@ -52,7 +51,6 @@
   left: 50%;
   transform: translate(-50%, -50%);
   background-size: contain;
-  z-index: 2;
   content: '';
 }
 
@@ -65,7 +63,6 @@
   left: 50%;
   width: 180px;
   height: 180px;
-  transform: translate(-50%, -50%) matrix(1, 0, 0, -1, 0, 0);
   cursor: pointer;
   text-align: center;
   z-index: 4;
@@ -73,11 +70,20 @@
   filter: drop-shadow(0px 0px 20px #270700);
   border-radius: 50%;
   border: 4px solid #FA8B24;
-
-  &.disabled {}
+  animation: 1s cta ease-in-out infinite;
 }
 
-.wheel_btn__button {
+.wheel_btn.disabled {
+  cursor: not-allowed;
+  transform: translate(-50%, -50%) matrix(1, 0, 0, -1, 0, 0) scale(1) !important;
+  animation-play-state: paused;
+
+  .wheel_btn__inner {
+    cursor: not-allowed;
+  }
+}
+
+.wheel_btn__inner {
   font-family: 'Montserrat', sans-serif;
   font-weight: 900;
   font-size: 40px;
@@ -108,6 +114,10 @@
 .wheel_spinner--main {
   width: 651px;
   height: 651px;
+
+  img {
+    width: 100%;
+  }
 }
 
 .wheel_spinner--center {
@@ -129,8 +139,26 @@
   animation: 3s spinner ease-in-out infinite;
 }
 
+.wheel_spinner.wheel_spinner_animated_again {
+  animation: 5s spinToTryAgain ease-in-out forwards;
+}
+
 .wheel_spinner.wheel_spinner_animated_1 {
-  animation: 7s spinTo1 ease-in-out forwards;
+  animation: 5s spinTo1 ease-in-out forwards;
+}
+
+@keyframes cta {
+  0% {
+    transform: translate(-50%, -50%) matrix(1, 0, 0, -1, 0, 0) scale(1);
+  }
+
+  50% {
+    transform: translate(-50%, -50%) matrix(1, 0, 0, -1, 0, 0) scale(1.1);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) matrix(1, 0, 0, -1, 0, 0) scale(1);
+  }
 }
 
 @keyframes spinner {
@@ -147,21 +175,35 @@
   }
 }
 
-@keyframes spinTo1 {
+@keyframes spinToTryAgain {
   0% {
     transform: rotate(-60deg);
   }
 
   70% {
-    transform: rotate(724deg);
-  }
-
-  80% {
-    transform: rotate(714deg);
+    transform: rotate(785deg);
   }
 
   100% {
-    transform: rotate(720deg);
+    transform: rotate(770deg);
+  }
+}
+
+@keyframes spinTo1 {
+  0% {
+    transform: rotate(770deg);
+  }
+
+  60% {
+    transform: rotate(1445deg);
+  }
+
+  80% {
+    transform: rotate(1435deg);
+  }
+
+  100% {
+    transform: rotate(1440deg);
   }
 }
 
@@ -171,7 +213,7 @@
 }
 
 .wheel_spinner.wheel_spinner_animated_2 {
-  animation: 5s spinTo2 ease-in-out forwards;
+  animation: 4s spinTo2 ease-in-out forwards;
 }
 
 @keyframes spinner-small {
@@ -219,18 +261,149 @@
   overflow: auto;
 }
 
+.popup_bonus {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  padding: 50px 35px;
+}
+
+.popup_bonus-box {
+  position: relative;
+  margin: auto;
+  text-align: center;
+  border: 2px solid #FFD79A;
+  max-width: 726px;
+  width: 100%;
+  background: radial-gradient(119.52% 89.79% at 50% 21.86%, rgba(56, 56, 56, 0.9) 0%, rgba(33, 33, 33, 0.9) 49.48%, rgba(21, 21, 21, 0.9) 100%);
+  border-radius: 50px;
+  padding: 106px 73px;
+  z-index: 2;
+  box-shadow: 0px 0px 0px 7px black, 0px 0px 0px 9px #FFD79A;
+}
+
+.popup_bonus-decorations {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+
+  &-item {
+    position: absolute;
+
+    img {
+      max-width: 100%;
+    }
+
+    &--top {
+      top: -40px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    &--right {
+      top: 50%;
+      right: -30px;
+      transform: translateY(-50%);
+    }
+
+    &--bottom {
+      bottom: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    &--left {
+      top: 50%;
+      left: -30px;
+      transform: translateY(-50%);
+    }
+  }
+}
+
+.popup_bonus-logo {
+  position: relative;
+  font-weight: 700;
+  font-size: 50px;
+  margin-bottom: 94px;
+
+  &::before {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    background-image: url('../img/background-dots.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+}
+
+.bonus_logo {
+  background: radial-gradient(94.46% 158.2% at 50% 50%, #FFDC77 0%, #934600 98.91%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  text-shadow: 0px 2px 3px rgba(181, 82, 26, 0.64);
+}
+
+.claim-bonus {
+  position: relative;
+  font-weight: 700;
+  font-size: 40px;
+  color: #fff;
+  padding: 18px 42px;
+  background: linear-gradient(90deg, #826313 0%, #FFE589 101.87%);
+  border-radius: 15px;
+  text-transform: uppercase;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.popup_bonus-text {
+  font-weight: 600;
+  font-size: 40px;
+  color: #fff;
+  margin-bottom: 129px;
+
+
+  span {
+    font-weight: 700;
+    font-size: 60px;
+    color: #FFD55B;
+    text-shadow: 0px 0px 10px #FF9921;
+    filter: drop-shadow(0px 0px 3px #EA8003);
+  }
+}
+
+.popup_bonus-terms a {
+  font-size: 20px;
+  line-height: 24px;
+  text-decoration-line: underline;
+  color: #fff;
+  margin-top: 20px;
+}
+
 .popup_window {
   display: none;
   position: absolute;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
+  padding: 0 10px;
+  width: 100%;
 }
 
 .signup-form {
   padding: 48px 87px 86px;
   max-width: 624px;
   width: 100%;
+  border: 2px solid #ffd79a;
   background-color: #212121;
   border-radius: 51px;
   margin: 60px auto;
@@ -239,6 +412,7 @@
 
 .bonus__inner {
   display: flex;
+  align-content: center;
   justify-content: space-between;
   max-width: 400px;
   margin: 0 auto;
@@ -253,6 +427,7 @@
   font-weight: 400;
   font-size: 25px;
   color: #CBCBCB;
+  height: max-content;
 
   .deposit__message {
     font-weight: 700;
@@ -285,7 +460,6 @@
 }
 
 .input-box {
-  max-width: 450px;
   width: 100%;
   border-radius: 14px;
   background-color: #484848;
@@ -330,7 +504,12 @@
     padding-left: 35px;
 
     &:first-child {
-      margin-bottom: 6px;
+      margin-bottom: 15px;
+    }
+
+    a {
+      color: white;
+      text-decoration: underline;
     }
   }
 }
@@ -368,6 +547,7 @@
 
 .log-in {
   &__text {
+    display: inline-block;
     color: #989898;
     font-weight: 500;
     font-size: 16px;
@@ -375,6 +555,7 @@
   }
 
   &__link {
+    display: inline-block;
     color: #FFCA40;
     font-weight: 500;
     font-size: 20px;

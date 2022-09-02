@@ -1,7 +1,7 @@
 $(function () {
 	$('select').selectric({
 		maxHeight: 170,
-		disableOnMobile: true,
+		disableOnMobile: false
 	});
 
 	window.onload = function () {
@@ -9,7 +9,10 @@ $(function () {
 			$spinner = $('.wheel_spinner--main'),
 			$spinnerTwo = $('.wheel_spinner--center'),
 			$popupOverlay = $('.popup_overlay'),
-			$popupWindow = $('.popup_window');
+			$popupBonus = $('.popup_bonus'),
+			$popupWindow = $('.popup_window'),
+			$claimBonus = $('#claimBonus');
+
 
 		$button.click(function () {
 			if ($button.hasClass('spin')) {
@@ -17,18 +20,24 @@ $(function () {
 			}
 		});
 
+		$claimBonus.on('click', function () {
+			localStorage.currentSpin = 'HTMLC_1237_spin';
+			$popupBonus.fadeOut();
+			$popupWindow.fadeIn();
+		});
+
 		function spin() {
 			$button.removeClass('spin').addClass('disabled');
 
 			$spinner
-				.addClass('wheel_spinner_animated_1')
+				.addClass('wheel_spinner_animated_again')
 				.removeClass('wheel_spinner_animated')
-				.animate(
-					{
-						transform: `rotate(-45deg)`,
-					},
-					500
-				);
+
+			setTimeout(function () {
+				$spinner
+					.removeClass('wheel_spinner_animated_again')
+					.addClass('wheel_spinner_animated_1')
+			}, 5000);
 
 			$spinnerTwo
 				.addClass('wheel_spinner_animated_2')
@@ -37,8 +46,8 @@ $(function () {
 			setTimeout(function () {
 				// localStorage.currentSpin = 'HTMLC_1237_spin';
 				$popupOverlay.fadeIn();
-				$popupWindow.fadeIn();
-			}, 7000);
+				$popupBonus.fadeIn();
+			}, 10700);
 		}
 	};
 });
