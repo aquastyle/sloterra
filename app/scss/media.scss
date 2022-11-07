@@ -161,8 +161,8 @@
 
 @media (max-width:570px), (max-height: 540px) {
   .wheel_spinner--main {
-    width: 313.42px;
-    height: 313.42px;
+    width: 290.42px;
+    height: 290.42px;
   }
 
   .wheel_spinner--center {
@@ -181,8 +181,8 @@
   }
 
   .wheel_wrap:after {
-    width: 350.41px;
-    height: 368.74px;
+    width: 315.41px;
+    height: 330.74px;
   }
 
   .popup_bonus-logo {
@@ -205,6 +205,14 @@
 
   .claim-bonus {
     padding: 20px;
+  }
+
+  .girl img{
+    display: none;
+  }
+
+  .monkey img{
+    display: none;
   }
 }
 
@@ -404,37 +412,11 @@
   }
 }
 
-@media (max-height: 750px) {
-  .wheel_spinner--main {
-    width: 446.87px;
-    height: 446.87px;
-  }
-
-  .wheel_spinner--center {
-    width: 377.16px;
-    height: 376.4px;
-  }
-
-  .wheel_btn {
-    width: 124.9px;
-    height: 124.9px;
-
-    &__inner {
-      font-size: 25px;
-      line-height: 30px;
-    }
-  }
-
-  .wheel_wrap:after {
-    width: 499.6px;
-    height: 525.74px;
-  }
-}
 
 @media (max-height: 680px) {
   .wheel_spinner--main {
-    width: 313.42px;
-    height: 313.42px;
+    width: 290.42px;
+    height: 290.42px;
   }
 
   .wheel_spinner--center {
@@ -453,8 +435,8 @@
   }
 
   .wheel_wrap:after {
-    width: 350.41px;
-    height: 368.74px;
+    width: 315.41px;
+    height: 330.74px;
   }
 }
 
